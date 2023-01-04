@@ -5,20 +5,23 @@ pipeline {
             steps{
                 sh '''
                 cd compose
-                docker-compose up -d --build
+                docker --version
+                docker info
+                crul --version
+                docker-compose version
                 '''
             }
         }
-        stage('Check') {
-            steps {
-                sh 'ls -a'
-            }
-        }
-        stage('Stop') {
-            steps {
-                sh 'docker-compose down --volumes'
-            }
-        }
+        // stage('Check') {
+        //     steps {
+        //         sh 'ls -a'
+        //     }
+        // }
+        // stage('Stop') {
+        //     steps {
+        //         sh 'docker-compose down --volumes'
+        //     }
+        // }
 
         
     }
