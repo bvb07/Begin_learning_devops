@@ -5,10 +5,8 @@ pipeline {
             steps{
                 sh '''
                 cd compose
-                docker --version
-                docker info
-                crul --version
-                docker-compose version
+                pwd
+                ls -a
                 '''
             }
         }
