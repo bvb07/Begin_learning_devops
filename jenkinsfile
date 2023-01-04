@@ -7,7 +7,7 @@ pipeline {
                 cd compose
                 pwd
                 ls -a
-                
+                docker --version
                 '''
                 echo '*************************************************'
             }
