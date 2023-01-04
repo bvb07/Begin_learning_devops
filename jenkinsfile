@@ -5,19 +5,21 @@ pipeline {
             steps{
                 sh '''
                 cd compose
-                ls -a
+                docker-compose up -d --build
                 '''
             }
         }
-        // stage('Build') {
-        //     steps {
-        //         sh 'docker-compose build'
-        //     }
-        // }
-        // stage('Deploy') {
-        //     steps {
-        //         sh 'docker-compose up -d'
-        //     }
-        // }
+        stage('Check') {
+            steps {
+                sh 'ls -a'
+            }
+        }
+        stage('Stop') {
+            steps {
+                sh 'docker-compose down --volumes'
+            }
+        }
+
+        
     }
 }
