@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>____My Website____</title>
+    <style>
+        body{
+            background-color: black;
+            color: aliceblue;
+            text-align: center;
+            display: block;
+        }
+        .btn {
+        background: #6C8FFF;
+        border: solid 1px #6C8FFF;
+        background: linear-gradient(180deg, #6C8FFF 0%, #2A4395 35%, #09184B 100%);
+        border-radius: 8px;
+        color: white;
+        padding: .75rem 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>== Fetch API here Web-server ==</h2> <br>
+    <button id="fetch-api" class="btn">--Execute-- </button>
+    <div id="results"></div>
+    <script>
+        const fetch_api = document.querySelector("#fetch-api");
+        const results = document.querySelector("#results")
+        fetch_api.addEventListener('click',(e)=> {
+            fetch("http://w2:3000",{
+                method : "get"
+            }).then(data => data.json()).then(data => {
+                results.innerHTML = data.message
+            } )
+        })
+    </script>
+    <br>
+    <img src="https://images.unsplash.com/photo-1626025437642-0b05076ca301?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=534&q=80" alt="football">
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>___Web_API___</title>
+    <style>
+        body{
+            background-color: rgb(45, 28, 152);
+            color: aliceblue;
+            text-align: center;
+            display: block;
+        }
+        .btn {
+        background: #000000;
+        border: solid 1px #000000;
+        background: linear-gradient(180deg, #020615 0%, #060b1d 35%, #060d27 100%);
+        border-radius: 8px;
+        color: white;
+        padding: .75rem 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>== Fetch API here 2 here ==</h2> <br>
+
+    <button id="fetch-api" class="btn">--Execute-- </button>
+    <div id="results"></div>
+
+    <script>
+        const fetch_api = document.querySelector("#fetch-api");
+        const results = document.querySelector("#results")
+        fetch_api.addEventListener('click',(e)=> {
+            fetch("http://w2:3000",{
+                method : "get"
+            }).then(data => data.json()).then(data => {
+                results.innerHTML = data.message
+            } )
+        })
+    </script>
+    <br>
+    <img src="https://images.unsplash.com/photo-1669811860168-2c2874158dbd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80" alt="fashion">
+</body>
+</html>

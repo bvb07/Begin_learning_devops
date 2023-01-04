@@ -1,0 +1,97 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multi-container-deployment
+  labels:
+    app: hello
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: multi-container
+  template:
+    metadata:
+      labels:
+        app: multi-container
+    spec:
+      hostname: w2
+      containers:
+      - name: container-1
+        image: boyson7/compose-w2:data1
+        ports:
+        - containerPort: 3000
+      - name: container-2
+        image: boyson7/work2:v1
+        ports:
+        - containerPort: 3001
+      - name: container-3
+        image: boyson7/compose-w4:data3
+        ports:
+        - containerPort: 3002
+     
+      - name: container-4
+        image: boyson7/nginx:v11
+        ports:
+        - containerPort: 80
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: multi-container-service
+  labels:
+    app: hello
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    protocol: TCP
+    port: 3000
+    targetPort: 3000
+    nodePort: 30006
+  - name: nginx
+    protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30007
+ 
+  selector:
+    app: multi-container
+ 
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: multi-container-service1
+  
+spec:
+  type: LoadBalancer
+  ports:
+  - name: https
+    protocol: TCP
+    port: 3001
+    targetPort: 3001
+    nodePort: 30005
+  selector:
+    app: multi-container
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: multi-container-service2
+  labels:
+    app: hello
+  
+spec:
+  type: LoadBalancer
+  # type: NodePort
+  ports:
+  - name: https1
+    protocol: TCP
+    port: 3002
+    targetPort: 3002
+    nodePort: 30002
+  selector:
+    app: multi-container

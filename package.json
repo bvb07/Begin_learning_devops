@@ -1,0 +1,19 @@
+{
+  "name": "work1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start" : "cd compose && docker-compose up -d --build",
+    "stop": "cd compose && docker-compose down --volumes",
+    "restart" : "cd compose && docker-compose restart",
+    "push" : "cd compose && docker-compose push",
+    "stack" : "cd compose && docker stack deploy -c docker-compose.yaml work_last",
+    "ps" : "cd compose && docker compose ps",
+    "rstack": "cd compose && docker stack rm work_last",
+    "st" : "cd compose && docker-compose up -f  docker-compose2 -d --build"
+    
+  },
+  "author": "",
+  "license": "ISC"
+}

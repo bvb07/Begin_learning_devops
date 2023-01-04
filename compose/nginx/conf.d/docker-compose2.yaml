@@ -1,0 +1,9 @@
+version: "3"
+services:
+    w3:
+    image: compose-w3:data2
+    build:
+      context: ../data/w3
+      dockerfile: Dockerfile
+    # deploy:
+    #   replicas: 1

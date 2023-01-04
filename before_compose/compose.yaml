@@ -1,0 +1,31 @@
+version:  "3.9"
+services:
+  redis:
+    image: 'redislabs/redismod'
+    ports:
+      - '6379:6379'
+    
+   
+  web1:
+    container_name: web1
+    hostname : web1
+    restart: on-failure
+    build: ./web-node-real
+    ports:
+      - '3000:5000'
+    
+      
+networks:
+  default:
+    name: boy-customix
+    external: true
+
+
+  
+
+
+
+    
+
+
+
