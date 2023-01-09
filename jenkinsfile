@@ -15,6 +15,7 @@ pipeline {
         stage('build'){
             steps{
                 sh '''
+                cd compose
                 docker-compose up -d
                 curl -v http:localhost:3000
                 '''
@@ -24,6 +25,7 @@ pipeline {
         stage('stop'){
             steps{
                 sh '''
+                cd compose
                 docker-compose down 
                 '''
            }
