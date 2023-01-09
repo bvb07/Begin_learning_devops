@@ -29,6 +29,8 @@ pipeline {
                 cd compose
                 docker-compose down 
                 kubectl config view
+                kubectl version
+                
                 '''
            }
         }
