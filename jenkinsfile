@@ -28,9 +28,7 @@ pipeline {
                 sh '''
                 cd compose
                 docker-compose down 
-                kubectl whoami
-                kubectl config current-context
-                kubectl config use-context
+                kubectl config view
                 '''
            }
         }
