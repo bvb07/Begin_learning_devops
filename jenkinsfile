@@ -24,7 +24,7 @@ pipeline {
         stage('stop'){
             steps{
                 sh '''
-                docker compose down 
+                docker-compose down 
                 '''
            }
         }
