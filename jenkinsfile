@@ -28,6 +28,7 @@ pipeline {
                 sh '''
                 cd compose
                 docker-compose down 
+                kubectl version
                 '''
            }
         }
