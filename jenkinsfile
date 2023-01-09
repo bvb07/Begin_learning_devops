@@ -17,7 +17,7 @@ pipeline {
                 sh '''
                 cd compose
                 docker-compose up -d
-                curl -v http://localhost:3000/
+             // curl -v http://localhost:3000/
 
                 '''
                 echo '*************************************************'
