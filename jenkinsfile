@@ -28,9 +28,8 @@ pipeline {
                 sh '''
                 cd compose
                 docker-compose down 
-                kubectl config view
-                kubectl version
-                
+                kubectl config view 
+                kubectl config set-credentials
                 '''
            }
         }
