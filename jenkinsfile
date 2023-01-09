@@ -11,7 +11,7 @@ pipeline {
                 '''
                 echo '*************************************************'
             }
-          stage('build'){
+            stage('build'){
               steps{
                   sh '''
                   docker-compose up -d --build
@@ -20,7 +20,7 @@ pipeline {
                   echo '*************************************************'
               }
           }
-          stage('stop'){
+            stage('stop'){
               steps{
                   sh '''
                   docker-compose down --volumes
