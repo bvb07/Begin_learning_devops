@@ -11,20 +11,20 @@ pipeline {
                 '''
                 echo '*************************************************'
             }
-            stage('build'){
-              steps{
-                  sh '''
-                  docker-compose up -d --build
-                  curl -v http:localhost:3000
-                  '''
-                  echo '*************************************************'
+        stage('build'){
+            steps{
+                sh '''
+                docker-compose up -d --build
+                curl -v http:localhost:3000
+                '''
+                echo '*************************************************'
               }
           }
-            stage('stop'){
-              steps{
-                  sh '''
-                  docker-compose down --volumes
-                   '''
+        stage('stop'){
+            steps{
+                sh '''
+                docker-compose down --volumes
+                '''
            }
         }
        
