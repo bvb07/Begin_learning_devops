@@ -13,6 +13,7 @@ pipeline {
                 sh 'echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list'
                 sh 'apt-get update'
                 sh 'apt-get install -y kubectl'
+                sh 'kubectl version'
             }
         }
     }
