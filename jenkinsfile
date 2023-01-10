@@ -44,7 +44,10 @@ pipeline {
                 cd kube
                 
  
-               
+                
+                export GOOGLE_APPLICATION_CREDENTIALS= '/root/.docker/config.json'
+                export CLOUDSDK_COMPUTE_ZONE= 'asia'
+   
                 gcloud 
                 kubectl get pods 
                 kubectl get service 
