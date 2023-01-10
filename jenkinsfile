@@ -40,11 +40,11 @@ pipeline {
                 docker-compose down
                 pwd
                 node -v
-                kubectl
                 cd ..
                 cd kube
-                kubectl config view
-                
+                kubectl get pods 
+                kubectl get service 
+                kubectl get ingrese
                 '''
                 echo '*************************************************'
            }
