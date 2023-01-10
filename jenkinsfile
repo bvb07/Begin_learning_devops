@@ -3,7 +3,7 @@ pipeline {
     agent any
     environment{
         TEST_URL = 'https://images.unsplash.com/photo-1673234759103-4bc13ee175d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80'
-            
+        CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE = '' 
     
     }
     stages {
@@ -43,11 +43,10 @@ pipeline {
                 kubectl
                 cd ..
                 cd kube
-                gcloud auth login --no-launch-browser 4/0AWgavdcs3TN5485k6ze69uEIlngO5_sYfy6nx7cJsbLMWL2jfI_oSVJiX9htxPIfsK_F8A
-                gcloud container clusters get-credentials trainee --zone asia-east1-a --project customix
                 kubectl get pods
                 kubectl get service
                 kubectl get ingrese
+                
                 '''
                 echo '*************************************************'
            }
