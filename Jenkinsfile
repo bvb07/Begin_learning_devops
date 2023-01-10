@@ -1,6 +1,5 @@
 pipeline {
     agent  any
-    }
     stages {
         stage('Install Node.js') {
             steps {
