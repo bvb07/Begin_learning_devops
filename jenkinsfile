@@ -39,6 +39,7 @@ pipeline {
                 cd compose
                 docker-compose down
                 pwd
+                node -v
                 '''
                 echo '*************************************************'
            }
