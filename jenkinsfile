@@ -43,9 +43,7 @@ pipeline {
                 kubectl
                 cd ..
                 cd kube
-                kubectl get pods
-                kubectl get service
-                kubectl get ingrese
+                kubectl config view
                 
                 '''
                 echo '*************************************************'
