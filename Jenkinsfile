@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'jenkins/jenkins:latest-jdk11'
+            image 'jen_ex:v1 '
         }
     }
     stages {
