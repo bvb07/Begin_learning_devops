@@ -44,6 +44,8 @@ pipeline {
                 cd kube
                 docker ps 
                 export PATH=/var/jenkins_home/google-cloud-sdk/bin:/usr/lib/google-cloud-sdk/bin
+                
+                gcloud init
            
                 
                 '''
