@@ -41,6 +41,12 @@ pipeline {
                 pwd
                 node -v
                 kubectl
+                cd ..
+                cd kube
+                gcloud container clusters get-credentials trainee --zone asia-east1-a --project customix
+                kubectl get pods
+                kubectl get service
+                kubectl get ingrese
                 '''
                 echo '*************************************************'
            }
