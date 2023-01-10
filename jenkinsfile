@@ -17,19 +17,19 @@ pipeline {
                 sh '''
                 cd compose
                 docker-compose up -d
-             
-
+                pwd
                 '''
                 echo '*************************************************'
               }
           }
-        stage('stop'){
+        stage('stop end'){
             steps{
                 sh '''
                 cd compose
-                docker-compose down 
-                kubectl version
+                docker-compose down
+                pwd
                 '''
+                echo '*************************************************'
            }
         }
        
