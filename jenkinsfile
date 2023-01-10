@@ -14,7 +14,7 @@ pipeline {
                 pwd
                 docker --version
                 ls -a
-              
+                kubectl version
                 '''
                 echo 'Init'
                 echo '******************************'  
