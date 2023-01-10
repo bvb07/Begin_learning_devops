@@ -44,7 +44,7 @@ pipeline {
                 cd kube
                 
  
-                gcloud container clusters get-credentials trainee --zone asia-east1-a --project customix
+               
                 
                 kubectl get pods 
                 kubectl get service 
