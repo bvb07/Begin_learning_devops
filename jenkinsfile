@@ -42,10 +42,6 @@ pipeline {
                 node -v
                 cd ..
                 cd kube
-         
-                curl https://sdk.cloud.google.com | bash
-                gcloud init
-                gcloud 
                 kubectl get pods 
                 kubectl get service 
                 kubectl get ingrese
