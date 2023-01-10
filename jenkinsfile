@@ -45,7 +45,7 @@ pipeline {
                 docker ps 
                 
                 
-                gcloud init
+                gcloud --version
            
                 
                 '''
