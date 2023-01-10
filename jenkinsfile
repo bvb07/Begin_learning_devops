@@ -42,12 +42,9 @@ pipeline {
                 node -v
                 cd ..
                 cd kube
-                
- 
-                
-                export GOOGLE_APPLICATION_CREDENTIALS= '/root/.docker/config.json'
-                export CLOUDSDK_COMPUTE_ZONE= 'asia'
-   
+         
+                curl https://sdk.cloud.google.com | bash
+                gcloud init
                 gcloud 
                 kubectl get pods 
                 kubectl get service 
