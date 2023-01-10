@@ -14,7 +14,7 @@ pipeline {
                 '''
                 echo 'Init'
                 echo '******************************'  
-                echo "registry url : ${env.TEST_URL"
+                echo "registry url : ${env.TEST_URL}"
                 echo '*************************************************'
             }
           }
