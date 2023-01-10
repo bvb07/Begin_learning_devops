@@ -42,9 +42,7 @@ pipeline {
                 node -v
                 cd ..
                 cd kube
-                kubectl get pods 
-                kubectl get service 
-                kubectl get ingrese
+               docker ps 
                 '''
                 
                 echo '*************************************************'
