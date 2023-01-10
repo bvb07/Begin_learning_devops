@@ -1,8 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'jen_ex:v1 '
-        }
+    agent  any
     }
     stages {
         stage('Install Node.js') {
