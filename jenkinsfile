@@ -40,7 +40,7 @@ pipeline {
             steps{
                 sh '''
                 cd compose
-                docker-compose down
+       
                 pwd
                 node -v
                 cd ..
@@ -48,8 +48,8 @@ pipeline {
                 docker ps 
                 
                 
-                gcloud --version
-                kubectl --version
+               
+                kubectl 
            
                 
                 '''
