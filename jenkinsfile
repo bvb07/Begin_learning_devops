@@ -6,6 +6,7 @@ pipeline {
         CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE = '' 
     
     }
+    
     stages {
         stage('Init'){
             steps{
@@ -13,8 +14,10 @@ pipeline {
                 cd compose
                 pwd
                 docker --version
-                ls -a
-            
+               
+               
+               ls -a
+     
                 '''
                 echo 'Init'
                 echo '******************************'  
@@ -46,6 +49,7 @@ pipeline {
                 
                 
                 gcloud --version
+                kubectl --version
            
                 
                 '''
